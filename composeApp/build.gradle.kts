@@ -115,12 +115,23 @@ dependencies {
 
 compose.desktop {
     application {
+//        javaHome = "D:\\Programs\\Java\\jdk-23"
         mainClass = "ua.kpi.ipze.part.MainKt"
 
         nativeDistributions {
             targetFormats(TargetFormat.Dmg, TargetFormat.Msi, TargetFormat.Deb)
             packageName = "ua.kpi.ipze.part"
             packageVersion = "1.0.0"
+
+            windows {
+                iconFile.set(project.file("src/jvmMain/resources/icon.ico"))
+                menuGroup = "P.A.R.T"
+                menu = true
+                shortcut = true
+                dirChooser = true
+                perUserInstall = true
+                upgradeUuid = "27b7b212-9155-4994-9885-632b4c11681b"
+            }
         }
     }
 }
